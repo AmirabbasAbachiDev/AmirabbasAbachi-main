@@ -1,141 +1,291 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>امیرعباس عباچی | نمونه کار</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>امیرعباس عباچی | Amir Abbas Abachi</title>
+
+    <!-- فونت وزیر (جذاب و خوانا) -->
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f0f0f;
-            color: #fff;
+            font-family: 'Vazir', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #1a1a2e);
+            color: #e0e0e0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            padding: 20px;
             direction: rtl;
         }
-        .container {
-            background: #1e1e1e;
-            padding: 40px 30px;
-            border-radius: 20px;
-            max-width: 700px;
-            width: 90%;
-            box-shadow: 0 0 30px rgba(0, 255, 200, 0.1);
-            text-align: center;
+
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 32px;
+            max-width: 820px;
+            width: 100%;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 200, 180, 0.08);
+            transition: 0.3s;
         }
-        h1 {
-            font-size: 2.2rem;
-            color: #00e6b2;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #aaa;
-            font-size: 1rem;
+
+        /* دکمه تغییر زبان */
+        .lang-switch {
+            text-align: left;
             margin-bottom: 20px;
         }
+        .lang-switch button {
+            background: transparent;
+            border: 1px solid #00d4b0;
+            color: #00d4b0;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-family: 'Vazir', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .lang-switch button:hover {
+            background: #00d4b0;
+            color: #0f0f1a;
+        }
+
+        /* نام */
+        .name {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00d4b0, #00a8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0a0b8;
+            margin-bottom: 22px;
+            border-right: 3px solid #00d4b0;
+            padding-right: 14px;
+        }
+
+        /* برچسب‌ها */
         .badge {
             display: inline-block;
-            background: #2a2a2a;
-            padding: 8px 18px;
-            border-radius: 30px;
-            margin: 5px;
+            background: rgba(0, 212, 176, 0.12);
+            border: 1px solid rgba(0, 212, 176, 0.2);
+            padding: 6px 18px;
+            border-radius: 40px;
             font-size: 0.85rem;
-            border: 1px solid #00e6b255;
+            color: #b0f0e0;
+            margin: 4px 4px 4px 0;
         }
         .lang-badge {
             display: inline-block;
-            background: #1f3a34;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin: 4px;
+            background: rgba(0, 168, 255, 0.08);
+            border: 1px solid rgba(0, 168, 255, 0.15);
+            padding: 4px 14px;
+            border-radius: 30px;
             font-size: 0.8rem;
-            color: #b0ffea;
+            color: #90d0ff;
+            margin: 3px 3px 3px 0;
         }
+
+        /* بخش‌ها */
         .section {
             margin-top: 30px;
-            text-align: right;
         }
         .section h2 {
-            color: #00e6b2;
             font-size: 1.2rem;
-            border-bottom: 1px solid #333;
+            color: #00d4b0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             padding-bottom: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            font-weight: 600;
         }
         .section p {
-            color: #ccc;
-            line-height: 1.8;
+            line-height: 2;
+            color: #c8c8dc;
             font-size: 0.95rem;
         }
+
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #00e6b2;
-            color: #0f0f0f;
-            font-weight: bold;
-            border-radius: 40px;
+            margin-top: 22px;
+            padding: 12px 36px;
+            background: #00d4b0;
+            color: #0b0b0b;
+            font-weight: 700;
+            border-radius: 60px;
             text-decoration: none;
+            font-family: 'Vazir', sans-serif;
             transition: 0.3s;
             border: none;
             cursor: pointer;
         }
         .btn:hover {
-            background: #00c49a;
-            transform: scale(1.03);
+            background: #00b894;
+            transform: scale(1.02);
         }
+
         .footer {
-            margin-top: 30px;
+            margin-top: 35px;
             font-size: 0.75rem;
-            color: #555;
+            color: #555570;
+            text-align: center;
+        }
+
+        /* نسخه انگلیسی (چپ‌چین) */
+        .en {
+            display: none;
+            direction: ltr;
+            text-align: left;
+        }
+        .en .subtitle {
+            border-right: none;
+            border-left: 3px solid #00d4b0;
+            padding-right: 0;
+            padding-left: 14px;
+        }
+        .en .badge,
+        .en .lang-badge {
+            margin: 4px 0 4px 4px;
+        }
+
+        /* کلاس فعال برای نمایش */
+        .lang-active {
+            display: block;
+        }
+        .lang-hidden {
+            display: none;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 550px) {
+            .card { padding: 28px 18px; }
+            .name { font-size: 1.9rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>امیرعباس عباچی</h1>
-        <div class="subtitle">توسعه‌دهنده فول استک | ۱۷ سال</div>
 
-        <div>
-            <span class="badge">HTML</span>
-            <span class="badge">CSS</span>
-            <span class="badge">JavaScript</span>
-            <span class="badge">Python</span>
+    <div class="card">
+
+        <!-- دکمه تغییر زبان -->
+        <div class="lang-switch">
+            <button id="toggleLang">🇬🇧 English</button>
         </div>
 
-        <div style="margin-top: 15px;">
-            <span class="lang-badge">🇫🇷 فرانسه</span>
-            <span class="lang-badge">🇪🇸 اسپانیا</span>
-            <span class="lang-badge">🇷🇺 روسی</span>
-            <span class="lang-badge">🇬🇧 انگلیسی</span>
-            <span class="lang-badge">🇩🇪 آلمانی</span>
+        <!-- ========== نسخه فارسی ========== -->
+        <div id="fa" class="lang-active">
+            <div class="name">امیرعباس عباچی</div>
+            <div class="subtitle">توسعه‌دهنده فول‌استک | ۱۷ سال</div>
+
+            <div>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Python</span>
+            </div>
+            <div style="margin-top: 12px;">
+                <span class="lang-badge">🇫🇷 فرانسه</span>
+                <span class="lang-badge">🇪🇸 اسپانیا</span>
+                <span class="lang-badge">🇷🇺 روسی</span>
+                <span class="lang-badge">🇬🇧 انگلیسی</span>
+                <span class="lang-badge">🇩🇪 آلمانی</span>
+            </div>
+
+            <div class="section">
+                <h2>درباره من</h2>
+                <p>
+                    من امیرعباس عباچی هستم، توسعه‌دهنده فول‌استک با تمرکز بر فرانت‌اند، بک‌اند و دیزاین.
+                    با وجود ۱۷ سال سن، اشتیاق زیادی برای یادگیری و ساخت پروژه‌های مدرن دارم.
+                    مسلط به ۵ زبان زنده دنیا، آماده همکاری با تیم‌های بین‌المللی.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>نمونه کارها</h2>
+                <p style="color: #777790;">به زودی پروژه‌های من اینجا قرار می‌گیرند.</p>
+            </div>
+
+            <a href="#" class="btn">ارتباط با من</a>
+            <div class="footer">© ۱۴۰۴ - تمامی حقوق محفوظ است</div>
         </div>
 
-        <div class="section">
-            <h2>درباره من</h2>
-            <p>
-                من امیرعباس عباچی هستم، توسعه‌دهنده فول استک با تسلط بر فرانت‌اند، بک‌اند و دیزاین. 
-                تازه وارد دنیای حرفه‌ای شدم اما با اشتیاق بالا و یادگیری سریع، آماده ساخت پروژه‌های مدرن و کاربردی هستم.
-                مسلط به ۵ زبان زنده دنیا، آماده همکاری با تیم‌های بین‌المللی.
-            </p>
+        <!-- ========== نسخه انگلیسی ========== -->
+        <div id="en" class="lang-hidden en">
+            <div class="name">Amir Abbas Abachi</div>
+            <div class="subtitle">Full-Stack Developer | 17 y/o</div>
+
+            <div>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Python</span>
+            </div>
+            <div style="margin-top: 12px;">
+                <span class="lang-badge">🇫🇷 French</span>
+                <span class="lang-badge">🇪🇸 Spanish</span>
+                <span class="lang-badge">🇷🇺 Russian</span>
+                <span class="lang-badge">🇬🇧 English</span>
+                <span class="lang-badge">🇩🇪 German</span>
+            </div>
+
+            <div class="section">
+                <h2>About Me</h2>
+                <p>
+                    I'm Amir Abbas Abachi, a Full-Stack Developer focused on front-end, back-end, and design.
+                    At 17, I have a strong passion for learning and building modern projects.
+                    Fluent in 5 languages, ready to collaborate with international teams.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Portfolio</h2>
+                <p style="color: #777790;">My projects will be here soon.</p>
+            </div>
+
+            <a href="#" class="btn">Contact Me</a>
+            <div class="footer">© 2025 - All rights reserved</div>
         </div>
 
-        <div class="section">
-            <h2>نمونه کارها</h2>
-            <p style="color: #888;">به زودی...</p>
-        </div>
-
-        <a href="#" class="btn">ارتباط با من</a>
-
-        <div class="footer">
-            © ۱۴۰۴ - تمامی حقوق محفوظ است
-        </div>
     </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleLang');
+        const faDiv = document.getElementById('fa');
+        const enDiv = document.getElementById('en');
+        let isFa = true;
+
+        toggleBtn.addEventListener('click', () => {
+            if (isFa) {
+                faDiv.classList.remove('lang-active');
+                faDiv.classList.add('lang-hidden');
+                enDiv.classList.remove('lang-hidden');
+                enDiv.classList.add('lang-active');
+                toggleBtn.textContent = '🇮🇷 فارسی';
+                isFa = false;
+            } else {
+                enDiv.classList.remove('lang-active');
+                enDiv.classList.add('lang-hidden');
+                faDiv.classList.remove('lang-hidden');
+                faDiv.classList.add('lang-active');
+                toggleBtn.textContent = '🇬🇧 English';
+                isFa = true;
+            }
+        });
+    </script>
+
 </body>
 </html>
